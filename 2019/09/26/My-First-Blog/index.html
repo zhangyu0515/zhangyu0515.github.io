@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>My First Blog | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首次搭建个人博客编辑测试： 首次搭建个人博客遇到的问题及解决方式：     由于本人用的是windows环境下配置，所以用Windows PowerShell下进行配置 具体命令与linux或mac os基本一致     在执行 cnpm install -g hexo-cli 命令安装成功后，执行hexo -v     出现问题：         PS C:\Windows\system32&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My First Blog">
+<meta property="og:url" content="http://yoursite.com/2019/09/26/My-First-Blog/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首次搭建个人博客编辑测试： 首次搭建个人博客遇到的问题及解决方式：     由于本人用的是windows环境下配置，所以用Windows PowerShell下进行配置 具体命令与linux或mac os基本一致     在执行 cnpm install -g hexo-cli 命令安装成功后，执行hexo -v     出现问题：         PS C:\Windows\system32&amp;g">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-26T00:55:58.340Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My First Blog">
+<meta name="twitter:description" content="首次搭建个人博客编辑测试： 首次搭建个人博客遇到的问题及解决方式：     由于本人用的是windows环境下配置，所以用Windows PowerShell下进行配置 具体命令与linux或mac os基本一致     在执行 cnpm install -g hexo-cli 命令安装成功后，执行hexo -v     出现问题：         PS C:\Windows\system32&amp;g">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-My-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/26/My-First-Blog/" class="article-date">
+  <time datetime="2019-09-26T00:29:13.000Z" itemprop="datePublished">2019-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      My First Blog
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首次搭建个人博客编辑测试：</p>
+<pre><code>首次搭建个人博客遇到的问题及解决方式：
+    由于本人用的是windows环境下配置，所以用Windows PowerShell下进行配置 具体命令与linux或mac os基本一致
+    在执行 cnpm install -g hexo-cli 命令安装成功后，执行hexo -v
+    出现问题：
+        PS C:\Windows\system32&gt; hexo -v
+        hexo : 无法加载文件 C:\Program Files\nodejs\global_modules\hexo.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。
+        所在位置 行:1 字符: 1
+        + hexo -v
+    出现原因：（参考https://www.jb51.net/article/95022.htm知道问题所在）
+        首次在计算机上启动 Windows PowerShell 时，现用执行策略很可能是 Restricted（默认设置）。
+        Restricted 策略不允许任何脚本运行。
+        若要了解计算机上的现用执行策略，请键入：
+        get-executionpolicy
+        若要在本地计算机上运行您编写的未签名脚本和来自其他用户的签名脚本，请使用以下命令将计算机上的
+        执行策略更改为 RemoteSigned：
+        set-executionpolicy remotesigned
+        有关详细信息，请参阅 Set-ExecutionPolicy。
+    解决方式：（参考https://www.jb51.net/article/95022.htm解决）
+        执行“set-ExecutionPolicy RemoteSigned ”：
+        PS C:\Windows\system32&gt; set-ExecutionPolicy RemoteSigned
+        执行策略更改
+        执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170
+        中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?
+        [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): y
+    解决结果：
+        此时执行hexo -v命令
+        PS C:\Windows\system32&gt; hexo -v
+        hexo-cli: 2.0.0
+        os: Windows_NT 10.0.17763 win32 x64
+        http_parser: 2.8.0
+        node: 10.16.3
+        v8: 6.8.275.32-node.54
+        uv: 1.28.0
+        zlib: 1.2.11
+        brotli: 1.0.7
+        ares: 1.15.0
+        modules: 64
+        nghttp2: 1.39.2
+        napi: 4
+        openssl: 1.1.1c
+        icu: 64.2
+        unicode: 12.1
+        cldr: 35.1
+        tz: 2019a
+    windows没有Vim怎么办：
+        个人使用了Visual Studio Code进行了首次对博客的编辑，直接打开当前路径下的source/_posts文件夹中的md文件即可开始编辑</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/26/My-First-Blog/" data-id="ck0zzn75m0001fgu98kja9j6r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/26/My-First-Blog/">My First Blog</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/26/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
