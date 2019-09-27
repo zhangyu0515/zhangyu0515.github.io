@@ -158,12 +158,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Set：HashSet集合："><a href="#Set：HashSet集合：" class="headerlink" title="Set：HashSet集合："></a>Set：HashSet集合：</h2><pre><code>1.元素不可重复（equals(),hashcode()方法的返回值是否相同）
-2.无序（hashcode()方法）
-3.集合元素可以为null
-4.HashSet不是线程安全的
-5.集合添加元素add(),清空元素clear(),移除元素remove(),是否包含contains()
-6.Iterator it = set Iterator(); while(it.hasnext()){System.out.println(it.next)}</code></pre>
+        <h2 id="Set："><a href="#Set：" class="headerlink" title="Set："></a>Set：</h2><pre><code>HashSet集合：
+    1.元素不可重复（equals(),hashcode()方法的返回值是否相同，首先调用hashCode()方法查看hash码是否被占用 如果被占用 再调用equals()判断是否完全相同）
+    2.无序（hashcode()方法）
+    3.集合元素可以为null
+    4.HashSet不是线程安全的
+    5.集合添加元素add(),清空元素clear(),移除元素remove(),是否包含contains(),长度size()
+    6.迭代器遍历：Iterator it = set Iterator(); while(it.hasnext()){System.out.println(it.next);}
+    7.for each遍历：for(Object obj:set){System.out.println(obj);}
+TreeSet集合：
+    1.默认自然排序 需要集合放入同类型元素（泛型）像String、包装类等默认按照从小到大的顺序遍历。
+      要求自定义类实现java.lang.Comparable接口并重写其compareTo(Object obj)的抽象方法在此方法中，指明按照自定义类的哪个属性进行排序。向TreeSet中添加元素时，首先按照compareTo()进行比较，一旦返回0，虽然仅是两个对象的此属性值相同，但是程序会认为这两个对象是相同的，进而后一个对象就不能添加进来。因此要求compareTo()与hashCode()以及equals()三者保持一致！
+    2.定制排序 需要实现Comparator接口 并重写compare()方法</code></pre><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><pre><code>1.List 元素有序(默认按元素的添加顺序来设置元素的索引)可重复集合,每个添加的元素有索引 索引下标同数组下标0，1，2...
+2.通过索引来访问指定位置的集合元素list.get(0);
+3.list.add(1,&quot;f&quot;) 在指定索引下标位置插入数据 原有在指定下标后   的元素 下标+1
+  list.addAll(2,list1) 在指定索引下标位置插入集合
+  list.indexOf(&quot;f&quot;) 获取指定元素在集合中第一次出现的索引下标
+  list.lastIndexOf() 获取最后一次出现的索引下标
+  list.remove() 移除指定索引位置下标
+  list.set(index,element) 根据指定索引下标修改元素
+  list.subList(2,4) 截取指定区间的元素成为一个新的集合 包含开始索引 不包含结束索引</code></pre><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code>具有映射关系的集合 键值对方式存储 键 值可以为任意类型，key,value key不可重复 一对一映射关系
+1.map.put(key,value)
+  map.get(key) map.remove(key) map.size() map.containsKey(key)判断当前集合是否包含指定的key map.containsValue(value) 判断当前集合是否包含指定的值
+2.遍历map集合 map.keySet() 获取map集合的key的集合
+  map.values() 获取集合所有的value
+  Set&lt;String&gt; keys = map.keySet();
+  for(String key : keys){
+      System.out.println(&quot;key:&quot;+key+&quot;value:&quot;+map.get(key));
+  }
+  map.entrySet()
+  Set&lt;Entry&lt;String,Integer&gt;&gt; entrys = map.entrySet();
+  for(Entry&lt;String,Integer&gt; en : entrys){
+      System.out.println(&quot;key:&quot;+en.getKey()+&quot;value:&quot;+en.getValue());
+  }
+3.HashMap HashTable 不保证集合元素有序 通过equals(),hashcode()返回的值是否相同判断key是否重复 
+  TreeMap有序 默认自然排序 一般不使用定制排序</code></pre>
       
 
       
