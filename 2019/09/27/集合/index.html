@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="小张的Hexo Blog">
 <meta property="og:description" content="Set：HashSet集合：     1.元素不可重复（equals(),hashcode()方法的返回值是否相同，首先调用hashCode()方法查看hash码是否被占用 如果被占用 再调用equals()判断是否完全相同）     2.无序（hashcode()方法）     3.集合元素可以为null     4.HashSet不是线程安全的     5.集合添加元素add(),清空元素cl">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-27T03:25:33.472Z">
+<meta property="og:updated_time" content="2019-09-27T06:28:31.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合">
 <meta name="twitter:description" content="Set：HashSet集合：     1.元素不可重复（equals(),hashcode()方法的返回值是否相同，首先调用hashCode()方法查看hash码是否被占用 如果被占用 再调用equals()判断是否完全相同）     2.无序（hashcode()方法）     3.集合元素可以为null     4.HashSet不是线程安全的     5.集合添加元素add(),清空元素cl">
@@ -194,7 +194,14 @@ TreeSet集合：
       System.out.println(&quot;key:&quot;+en.getKey()+&quot;value:&quot;+en.getValue());
   }
 3.HashMap HashTable 不保证集合元素有序 通过equals(),hashcode()返回的值是否相同判断key是否重复 
-  TreeMap有序 默认自然排序 一般不使用定制排序</code></pre>
+  TreeMap有序 默认自然排序 一般不使用定制排序</code></pre><h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><pre><code>操作集合的工具类
+Collections.reverse(list) 反转List集合中的元素
+Collections.shuffle(list) 对List集合元素随机排序
+Collections.sort(list) list集合字典升序排列 
+Collections.sort(list,new class()) 实现Comparator接口 并重写compare()方法
+Collections.swap(list,index,index) 替换集合中索引元素
+Collections.frequency(list,元素) 返回集合中元素出现的次数
+Collections.replaceAll(list,old,new) 使用新值替换元素中所有旧值</code></pre>
       
 
       
